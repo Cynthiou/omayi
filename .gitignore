@@ -3,3 +3,7 @@ node_modules
 .DS_Store
 .idea
 .vscode
+
+# Variables d'environnement : jamais versionnées
+.env
+.env.local
