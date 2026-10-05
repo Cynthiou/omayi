@@ -1,22 +1,42 @@
-// Load environment variables from .env file
+// Charge les variables d'environnement depuis le fichier .env
 import "dotenv/config";
 
-// Check database connection
-// Note: This is optional and can be removed if the database connection
-// is not required when starting the application
+import { listerVariablesManquantes } from "./config/env";
+
+/* ************************************************************************* */
+
+// Vérification de la configuration avant toute autre chose : il vaut mieux
+// une erreur explicite au démarrage qu'une panne silencieuse plus tard.
+
+const variablesManquantes = listerVariablesManquantes();
+
+if (variablesManquantes.length > 0) {
+  console.error(
+    "Démarrage impossible. Variables d'environnement manquantes :",
+    variablesManquantes.join(", "),
+  );
+  console.error(
+    "Copie server/.env.sample en server/.env puis renseigne ces variables.",
+  );
+
+  process.exit(1);
+}
+
+/* ************************************************************************* */
+
+// Vérifie la connexion à la base de données
+// Un échec n'empêche pas le démarrage : c'est /api/health qui fait foi
 import "../database/checkConnection";
 
-// Import the Express application from ./app
+// Importe l'application Express
 import app from "./app";
 
-// Get the port from the environment variables
 const port = process.env.APP_PORT;
 
-// Start the server and listen on the specified port
 app
   .listen(port, () => {
-    console.info(`Server is listening on port ${port}`);
+    console.info(`Serveur à l'écoute sur le port ${port}`);
   })
   .on("error", (err: Error) => {
-    console.error("Error:", err.message);
+    console.error("Erreur :", err.message);
   });
