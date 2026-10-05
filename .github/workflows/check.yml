@@ -29,4 +29,6 @@ jobs:
         run: biome ci --error-on-warnings --no-errors-on-unmatched --changed --since="origin/${GITHUB_BASE_REF}" .
 
       - name: Compile with tsc
-        run: npm i && (cd client && npx tsc --noEmit) && (cd server && npx tsc --noEmit)
+        # check-types --workspaces couvre client, server et shared : un
+        # nouvel espace de travail est vérifié sans toucher à ce fichier.
+        run: npm i && npm run check-types --workspaces --if-present
