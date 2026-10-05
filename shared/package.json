@@ -1,0 +1,17 @@
+{
+  "name": "@obacy/shared",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Code partagé entre le client et le serveur OBACY",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
