@@ -5,7 +5,7 @@ import healthActions from "./modules/health/healthActions";
 const router = express.Router();
 
 /* ************************************************************************* */
-// Routes de l'API OBACY
+// Routes de l'API OMAYI
 // Chaque route suit la chaîne Router -> Action -> Repository -> MySQL.
 /* ************************************************************************* */
 

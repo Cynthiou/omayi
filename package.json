@@ -1,14 +1,14 @@
 {
-  "name": "obacy",
+  "name": "omayi",
   "version": "0.0.1",
   "description": "",
-  "homepage": "https://github.com/Cynthiou/obacy#readme",
+  "homepage": "https://github.com/Cynthiou/omayi#readme",
   "bugs": {
-    "url": "https://github.com/Cynthiou/obacy/issues"
+    "url": "https://github.com/Cynthiou/omayi/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Cynthiou/obacy.git"
+    "url": "git+https://github.com/Cynthiou/omayi.git"
   },
   "workspaces": ["client", "server", "shared"],
   "scripts": {

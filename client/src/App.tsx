@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <header className="entete">
-        <h1>OBACY</h1>
+        <h1>OMAYI</h1>
       </header>
 
       <main className="contenu">

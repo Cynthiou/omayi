@@ -1,4 +1,4 @@
-# MySQL de développement OBACY.
+# MySQL de développement OMAYI.
 #
 # Seule la base de données tourne dans Docker. Le client et le serveur se
 # lancent sur la machine avec `npm run dev` (ports 3000 et 3310).
@@ -9,12 +9,12 @@
 # Aucun identifiant n'est écrit dans ce fichier : ils sont lus dans le .env
 # de la racine, qui n'est pas versionné (voir .env.sample).
 
-name: obacy
+name: omayi
 
 services:
   database:
     image: mysql:8.0
-    container_name: obacy-database
+    container_name: omayi-database
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: ${DB_NAME:?DB_NAME manquant dans le .env de la racine}
@@ -25,7 +25,7 @@ services:
       # host:container - l'adresse 127.0.0.1 limite l'accès à cette machine
       - "127.0.0.1:${DB_PORT:-3306}:3306"
     volumes:
-      - obacy-database-data:/var/lib/mysql
+      - omayi-database-data:/var/lib/mysql
     healthcheck:
       test:
         [
@@ -44,4 +44,4 @@ services:
       start_period: 20s
 
 volumes:
-  obacy-database-data:
+  omayi-database-data:

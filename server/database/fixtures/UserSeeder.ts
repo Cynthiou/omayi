@@ -11,7 +11,7 @@ class UserSeeder extends AbstractSeeder {
   run() {
     const utilisateurTemoin = {
       refName: "user_demo",
-      email: "demo@obacy.local",
+      email: "demo@omayi.local",
       password: "placeholder-remplace-en-US03",
     };
 

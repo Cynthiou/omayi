@@ -1,6 +1,6 @@
-# OBACY
+# OMAYI
 
-Monorepo OBACY : un seul dépôt, trois espaces de travail npm.
+Monorepo OMAYI : un seul dépôt, trois espaces de travail npm.
 
 | Espace   | Rôle                                | Technologies         |
 | -------- | ----------------------------------- | -------------------- |
@@ -24,8 +24,8 @@ Monorepo OBACY : un seul dépôt, trois espaces de travail npm.
 ### 1. Cloner et installer
 
 ```bash
-git clone https://github.com/Cynthiou/obacy.git
-cd obacy
+git clone https://github.com/Cynthiou/omayi.git
+cd omayi
 npm install
 ```
 
@@ -151,7 +151,7 @@ disponible, ou service indisponible avec le message d'erreur.
 nom de paquet, depuis les deux côtés comme depuis les tests :
 
 ```ts
-import { SHARED_READY } from "@obacy/shared";
+import { SHARED_READY } from "@omayi/shared";
 ```
 
 `SHARED_READY` est un témoin **temporaire**. Il ne sert qu'à prouver, en US00,
@@ -247,7 +247,7 @@ depuis `client/dist`.
 ## Structure du dépôt
 
 ```plaintext
-obacy/
+omayi/
 ├── client/                  Interface web (Vite + React)
 │   └── src/
 │       ├── components/      Composants réutilisables
@@ -288,7 +288,7 @@ réglages du dépôt GitHub :
   sans underscore (il casserait le certificat Let's Encrypt)
 
 Le déploiement n'est pas dans le périmètre de l'US00 et n'a pas encore été
-vérifié pour OBACY.
+vérifié pour OMAYI.
 
 ## Hors du périmètre de l'US00
 

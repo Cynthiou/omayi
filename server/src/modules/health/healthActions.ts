@@ -1,4 +1,4 @@
-import { SHARED_READY } from "@obacy/shared";
+import { SHARED_READY } from "@omayi/shared";
 
 import healthRepository from "./healthRepository";
 

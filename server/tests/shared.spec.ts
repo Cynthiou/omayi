@@ -1,4 +1,4 @@
-import { SHARED_READY } from "@obacy/shared";
+import { SHARED_READY } from "@omayi/shared";
 
 // Vérifie que l'espace shared est bien résolu depuis les tests Jest,
 // en plus du client et du serveur (critère d'acceptation US00).

@@ -46,7 +46,7 @@ describe("GET /api/health", () => {
   it("ne divulgue aucun détail technique MySQL au navigateur", async () => {
     jest.spyOn(console, "error").mockImplementation(() => undefined);
     jest.spyOn(databaseClient, "query").mockImplementation(async () => {
-      throw new Error("Access denied for user 'obacy'@'127.0.0.1'");
+      throw new Error("Access denied for user 'omayi'@'127.0.0.1'");
     });
 
     const reponse = await supertest(app).get("/api/health");
@@ -55,6 +55,6 @@ describe("GET /api/health", () => {
 
     expect(corps).not.toMatch(/access denied/i);
     expect(corps).not.toMatch(/127\.0\.0\.1/);
-    expect(corps).not.toMatch(/obacy/i);
+    expect(corps).not.toMatch(/omayi/i);
   });
 });

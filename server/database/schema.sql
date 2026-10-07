@@ -1,4 +1,4 @@
--- Schéma minimal OBACY.
+-- Schéma minimal OMAYI.
 --
 -- Les tables d'exemple du template (item) ont été retirées.
 -- Le vrai modèle de données métier (clients, chantiers, devis, catalogue)

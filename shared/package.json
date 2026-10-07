@@ -1,8 +1,8 @@
 {
-  "name": "@obacy/shared",
+  "name": "@omayi/shared",
   "version": "0.0.1",
   "private": true,
-  "description": "Code partagé entre le client et le serveur OBACY",
+  "description": "Code partagé entre le client et le serveur OMAYI",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "exports": {

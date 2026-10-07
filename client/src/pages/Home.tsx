@@ -1,4 +1,4 @@
-import { SHARED_READY } from "@obacy/shared";
+import { SHARED_READY } from "@omayi/shared";
 import { useEffect, useState } from "react";
 
 import { recupererEtatSante } from "../services/health";

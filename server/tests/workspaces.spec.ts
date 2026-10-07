@@ -18,7 +18,7 @@ describe("monorepo", () => {
   it("installe shared depuis la racine", () => {
     // npm install à la racine doit lier shared dans node_modules,
     // sans installation séparée dans chaque espace.
-    const chemin = path.join(racine, "node_modules", "@obacy", "shared");
+    const chemin = path.join(racine, "node_modules", "@omayi", "shared");
 
     expect(fs.existsSync(chemin)).toBe(true);
   });

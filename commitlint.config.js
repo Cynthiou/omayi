@@ -1,4 +1,4 @@
-// Convention de commits OBACY : type(USxx): description
+// Convention de commits OMAYI : type(USxx): description
 // Exemple : feat(US14): add client search
 module.exports = {
   extends: ["@commitlint/config-conventional"],
