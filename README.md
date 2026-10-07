@@ -169,6 +169,98 @@ Les dossiers `shared/src/types`, `shared/src/catalogue` et `shared/src/regles`
 sont des emplacements réservés, encore vides : ils seront remplis en US02,
 US09 et US11.
 
+## Design et charte graphique
+
+La référence est `Charte graphique omayi.html`, à la racine : logo, couleurs,
+contrastes, typographie et mesures des éléments d'interface. Elle s'ouvre
+directement dans un navigateur, sans rien installer.
+
+L'interface est stylée avec **Tailwind CSS 4**. Il n'y a pas de
+`tailwind.config.js` : en version 4, toute la configuration vit dans le CSS,
+ici dans `client/src/styles/index.css`.
+
+### Les deux couches de couleurs
+
+`client/src/styles/tokens.css` contient deux couches, et il ne faut pas les
+confondre :
+
+| Couche | Préfixe | Change avec le thème ? | À utiliser dans un composant ? |
+| ------ | ------- | ---------------------- | ------------------------------ |
+| Palette de marque | `--omayi-*` | Non | Non, sauf logo et graphismes |
+| Rôles d'interface | `--bg`, `--ink`, `--surface`, `--action`… | Oui | **Oui, toujours** |
+
+Concrètement, on écrit `bg-surface text-ink`, jamais une couleur en dur ni une
+encre de marque. C'est ce qui fait que le thème sombre fonctionne sans écrire
+un seul `dark:` : les utilitaires pointent sur les variables, et les variables
+basculent.
+
+Le thème suit le réglage du système. Pour le forcer, on pose
+`data-theme="dark"` ou `data-theme="light"` sur `<html>`.
+
+### L'orange, et pourquoi il y en a deux
+
+Du blanc sur l'orange du logo `#EA580C` ne donne que **3,56:1**, sous le seuil
+WCAG AA de 4,5:1. Le chapitre 10 de la charte posait la question ; la réponse
+retenue ici est son **option B** :
+
+- `#EA580C` reste l'orange de marque : logo, icônes actives, aplats.
+- `#C2410C` (`--action`) porte le texte : boutons et liens, **5,18:1** avec du
+  blanc, donc conformes dès 16 px.
+
+En thème sombre, `--action` repasse à `#EA580C` : sur le fond `#111827` il
+atteint 4,98:1, et le libellé du bouton passe en noir. Pour revenir à l'option
+A, il suffit de changer `--action` dans `tokens.css` — rien d'autre dans le
+code ne connaît ces valeurs.
+
+### Échelle typographique
+
+Les sept styles du chapitre 08 sont des utilitaires. Chacun porte déjà sa
+taille, son interligne **et** sa graisse :
+
+| Utilitaire | Réglage | Usage |
+| ---------- | ------- | ----- |
+| `text-titre` | 700 · 28/34 | Titre de page, numéro de document |
+| `text-sous-titre` | 400 · 20/28 | Sous-titre, titre de section |
+| `text-courant` | 400 · 16/24 | Paragraphes, champs de saisie |
+| `text-petit` | 400 · 14/20 | Dates, infos secondaires |
+| `text-bouton` | 600 · 16/24 | Libellés de boutons |
+| `text-legende` | 500 · 12/16 | Badges, onglets |
+
+Donc `text-titre` suffit : pas besoin d'ajouter `font-bold leading-9`.
+
+Les rayons de la charte remplacent l'échelle de Tailwind : `rounded-sm` vaut
+8 px ici, `rounded-md` 12 px. Les espacements de la charte (4, 8, 16, 24,
+32 px) correspondent déjà à `1`, `2`, `4`, `6`, `8` de Tailwind.
+
+### Polices
+
+Inter et JetBrains Mono sont servies depuis `node_modules`
+(`@fontsource/*`), sous-ensemble latin seulement. Aucune requête ne part vers
+Google Fonts quand un artisan ouvre l'application.
+
+### Règles à ne pas perdre de vue
+
+Elles viennent de la charte, pas d'une préférence :
+
+- **Un seul bouton `principal` par écran** : l'action que l'artisan est venu
+  faire.
+- **Cibles tactiles de 48 px**, jamais moins de 44 px — l'app sert sur
+  chantier, souvent avec des gants.
+- **Un statut s'écrit toujours en toutes lettres.** La couleur ne doit jamais
+  le porter seule, d'où la pastille de texte dans `Badge`.
+- **Montants en chiffres tabulaires** : la classe `.montant`.
+- **Contour de focus visible** sur tout ce qui se clique (déjà posé globalement
+  sur `:focus-visible`).
+- Pas de dégradé, pas d'ombre décorative, pas de deuxième famille de
+  caractères, pas de couleur hors palette.
+
+### Reste à trancher
+
+Le chapitre 10 de la charte liste encore trois points ouverts : les teintes
+relevées à l'œil sur une image plutôt que dans le fichier Illustrator, les
+tailles minimales du logo à l'impression, et le nom du produit dans les
+documents (le backlog parle encore de « NTHIA »).
+
 ## Qualité et conventions
 
 ### Vérifications
@@ -248,11 +340,19 @@ depuis `client/dist`.
 
 ```plaintext
 omayi/
-├── client/                  Interface web (Vite + React)
+├── Charte graphique omayi.html   Charte de référence, à ouvrir au navigateur
+├── client/                  Interface web (Vite + React + Tailwind)
+│   ├── public/
+│   │   └── favicon.svg      Icône, dérivée du logo de la charte
 │   └── src/
-│       ├── components/      Composants réutilisables
+│       ├── components/
+│       │   ├── ui/          Button, Badge, Card aux mesures de la charte
+│       │   └── Logo.tsx     Logo omayi, chemins repris de la charte
 │       ├── pages/           Pages
 │       ├── services/        Appels à l'API
+│       ├── styles/
+│       │   ├── tokens.css   Variables de la charte (thème clair et sombre)
+│       │   └── index.css    Entrée unique : polices, Tailwind, échelle typo
 │       └── App.tsx          Coquille de l'application
 ├── server/                  API REST (Express)
 │   ├── bin/                 Scripts db:migrate et db:seed

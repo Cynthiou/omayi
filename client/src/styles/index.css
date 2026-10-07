@@ -1,0 +1,137 @@
+/*
+ * Point d'entrée des styles du client.
+ *
+ * L'ordre compte : les tokens d'abord, Tailwind ensuite, puis le bloc
+ * @theme qui branche les deux. Les polices sont servies depuis
+ * node_modules, pas depuis Google Fonts : rien ne part vers un serveur
+ * tiers quand un artisan ouvre l'app.
+ */
+
+@import "./tokens.css";
+
+/* Sous-ensemble latin seulement : inutile d'embarquer le cyrillique, le grec
+ * et le vietnamien pour une app française. */
+@import "@fontsource/inter/latin-400.css";
+@import "@fontsource/inter/latin-500.css";
+@import "@fontsource/inter/latin-600.css";
+@import "@fontsource/inter/latin-700.css";
+@import "@fontsource/jetbrains-mono/latin-400.css";
+
+@import "tailwindcss";
+
+/*
+ * Le variant dark: pour les rares cas où le thème change autre chose
+ * qu'une couleur. Les couleurs, elles, basculent déjà toutes seules via
+ * les variables de tokens.css : `bg-surface` est correct dans les deux
+ * thèmes sans avoir à écrire `dark:`.
+ */
+@custom-variant dark {
+  &:where([data-theme="dark"], [data-theme="dark"] *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:where(
+        :root:not([data-theme="light"]),
+        :root:not([data-theme="light"]) *
+      ) {
+      @slot;
+    }
+  }
+}
+
+/*
+ * `inline` est indispensable ici : il fait pointer les utilitaires
+ * directement sur var(--ink) au lieu de recopier la valeur du thème clair
+ * au moment du build. Sans lui, le thème sombre ne s'appliquerait pas.
+ */
+@theme inline {
+  /* Rôles — à utiliser partout dans les composants */
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+
+  --color-action: var(--action);
+  --color-action-ink: var(--action-ink);
+  --color-action-soft: var(--action-soft);
+
+  --color-ok: var(--ok);
+  --color-ok-bg: var(--ok-bg);
+  --color-ko: var(--ko);
+  --color-ko-bg: var(--ko-bg);
+  --color-info: var(--info);
+  --color-info-bg: var(--info-bg);
+  --color-warn: var(--warn);
+  --color-warn-bg: var(--warn-bg);
+
+  /* Encres de marque — logo et graphismes uniquement */
+  --color-omayi-orange: var(--omayi-orange);
+
+  /* Familles */
+  --font-sans: var(--police);
+  --font-mono: var(--police-mono);
+
+  /* Rayons de la charte. Ils remplacent l'échelle par défaut de Tailwind :
+   * rounded-sm vaut 8 px ici, pas 2 px. */
+  --radius-sm: var(--rayon-sm);
+  --radius-md: var(--rayon-md);
+  --radius-lg: var(--rayon-lg);
+
+  /*
+   * Les sept styles de texte du chapitre 08. Un seul utilitaire porte la
+   * taille, l'interligne et la graisse : `text-titre` suffit, pas besoin
+   * d'ajouter `font-bold leading-9`.
+   */
+  --text-titre: 28px;
+  --text-titre--line-height: 34px;
+  --text-titre--font-weight: 700;
+
+  --text-sous-titre: 20px;
+  --text-sous-titre--line-height: 28px;
+  --text-sous-titre--font-weight: 400;
+
+  --text-courant: 16px;
+  --text-courant--line-height: 24px;
+  --text-courant--font-weight: 400;
+
+  --text-petit: 14px;
+  --text-petit--line-height: 20px;
+  --text-petit--font-weight: 400;
+
+  --text-bouton: 16px;
+  --text-bouton--line-height: 24px;
+  --text-bouton--font-weight: 600;
+
+  --text-legende: 12px;
+  --text-legende--line-height: 16px;
+  --text-legende--font-weight: 500;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-ink font-sans text-courant antialiased;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* « Contour de focus visible sur tout ce qui se clique » — chapitre 09. */
+  :focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 2px;
+  }
+
+  /* Les montants d'un devis doivent s'aligner en colonne. */
+  .montant {
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

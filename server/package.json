@@ -1,5 +1,5 @@
 {
-  "name": "@js-monorepo/server",
+  "name": "@omayi/server",
   "scripts": {
     "check-types": "tsc --noEmit",
     "dev": "tsx watch --clear-screen=false ./src/main",

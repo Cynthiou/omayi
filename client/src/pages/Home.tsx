@@ -1,6 +1,8 @@
 import { SHARED_READY } from "@omayi/shared";
 import { useEffect, useState } from "react";
 
+import Badge from "../components/ui/Badge";
+import Card from "../components/ui/Card";
 import { recupererEtatSante } from "../services/health";
 
 import type { EtatSante } from "../services/health";
@@ -35,32 +37,33 @@ function Home() {
   }, []);
 
   return (
-    <section className="carte">
-      <h2>État du service</h2>
-
-      {etat.phase === "chargement" && <p className="statut">Vérification…</p>}
+    <Card titre="État du service">
+      {/* La charte interdit de laisser la couleur seule porter un statut :
+          chaque pastille écrit son état en toutes lettres. */}
+      {etat.phase === "chargement" && <Badge>Vérification…</Badge>}
 
       {etat.phase === "ok" && (
         <>
-          <p className="statut statut-ok">
-            Serveur et base de données disponibles.
-          </p>
-          <p className="note">
-            Code partagé vu par le serveur : <code>{etat.sante.shared}</code>
+          <Badge ton="ok">Serveur et base disponibles</Badge>
+          <p className="text-petit text-muted">
+            Code partagé vu par le serveur :{" "}
+            <code className="font-mono">{etat.sante.shared}</code>
           </p>
         </>
       )}
 
       {etat.phase === "erreur" && (
-        <p className="statut statut-erreur">
-          Service indisponible : {etat.message}
-        </p>
+        <>
+          <Badge ton="ko">Service indisponible</Badge>
+          <p className="text-petit text-muted">{etat.message}</p>
+        </>
       )}
 
-      <p className="note">
-        Code partagé importé par le client : <code>{SHARED_READY}</code>
+      <p className="text-petit text-muted">
+        Code partagé importé par le client :{" "}
+        <code className="font-mono">{SHARED_READY}</code>
       </p>
-    </section>
+    </Card>
   );
 }
 

@@ -1,0 +1,725 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Charte graphique omayi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Mise en page : colonne unique de 1120px, chapitres séparés par un filet, spécimens sur fond neutre. */
+:root{
+  --bg:#ffffff;
+  --surface:#f9fafb;
+  --surface-2:#f3f4f6;
+  --line:#e5e7eb;
+  --ink:#111827;
+  --muted:#6b7280;
+  --orange:#ea580c;
+  --orange-soft:#ffedd5;
+  --ok:#15803d; --ok-bg:#dcfce7;
+  --ko:#b91c1c; --ko-bg:#fee2e2;
+  --info:#1d4ed8; --info-bg:#dbeafe;
+  --warn:#92400e; --warn-bg:#fef3c7;
+  --ui:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --r-sm:8px; --r-md:12px; --r-lg:24px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111827;--surface:#1f2937;--surface-2:#18212f;--line:#374151;--ink:#f9fafb;--muted:#9ca3af;
+  --orange-soft:#3b2416;--ok:#4ade80;--ok-bg:#14301f;--ko:#f87171;--ko-bg:#3a1a1a;--info:#93c5fd;--info-bg:#172a4a;--warn:#fbbf24;--warn-bg:#3a2a10;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111827;--surface:#1f2937;--surface-2:#18212f;--line:#374151;--ink:#f9fafb;--muted:#9ca3af;
+  --orange-soft:#3b2416;--ok:#4ade80;--ok-bg:#14301f;--ko:#f87171;--ko-bg:#3a1a1a;--info:#93c5fd;--info-bg:#172a4a;--warn:#fbbf24;--warn-bg:#3a2a10;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font:400 15px/1.6 var(--ui);-webkit-font-smoothing:antialiased;margin:0}
+h1,h2,h3,p{margin:0}
+h2{font:800 30px/1.1 var(--ui);letter-spacing:-.02em;text-wrap:balance}
+h3{font:700 15px/1.3 var(--ui)}
+.lead{color:var(--muted);max-width:68ch}
+.note{font-size:13px;line-height:1.55;color:var(--muted)}
+.eyebrow{font:600 11px var(--ui);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--mono);font-size:12.5px;font-variant-numeric:tabular-nums}
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 11px var(--ui);letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.tag.todo{background:var(--warn-bg);color:var(--warn)}
+.tag.ok{background:var(--ok-bg);color:var(--ok)}
+.tag.ko{background:var(--ko-bg);color:var(--ko)}
+
+/* Barre */
+header.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1120px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:16px}
+.bar-logo{width:76px;height:auto;display:block}
+nav.toc{margin-left:auto;display:flex;gap:2px;flex-wrap:wrap;justify-content:flex-end}
+nav.toc a{color:var(--muted);text-decoration:none;font:600 12px var(--ui);padding:6px 9px;border-radius:999px}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--ink);background:var(--surface)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+
+main{max-width:1120px;margin:0 auto;padding:56px 24px 96px;display:flex;flex-direction:column;gap:88px}
+section{display:flex;flex-direction:column;gap:24px}
+.sec-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;border-top:2px solid var(--ink);padding-top:16px}
+.sec-n{font:800 30px/1.1 var(--ui);color:var(--orange);font-variant-numeric:tabular-nums}
+.sec-head .note{margin-left:auto}
+
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.g5{grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr))}
+.box{background:var(--surface);border-radius:var(--r-md);padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.col{display:flex;flex-direction:column;gap:12px;min-width:0}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+
+/* Logo */
+svg.wm{display:block;width:100%;height:auto}
+.lw{--ink-l:#111827;--dot:#ea580c}
+.hero{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));align-items:center}
+.lockup{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.lockup .wm{width:min(100%,420px)}
+.tagline{font:600 13px var(--ui);letter-spacing:.32em;text-transform:uppercase;color:var(--ink)}
+.say{display:flex;align-items:baseline;gap:6px 12px;flex-wrap:wrap;margin-top:10px;padding-top:14px;border-top:1px solid var(--line)}
+.say-lab{font:600 11px var(--ui);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.say-syl{font:700 22px var(--ui);letter-spacing:.02em}
+.say-syl i{font-style:normal;color:var(--orange);padding:0 4px}
+.say-note{font-size:13px;color:var(--muted);flex-basis:100%}
+.hero h1{font:800 clamp(34px,5vw,48px)/1.05 var(--ui);letter-spacing:-.03em;text-wrap:balance}
+.meta{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-size:13px}
+.meta dt{color:var(--muted)}
+.meta dd{margin:0;font-weight:600}
+
+.tile{border-radius:var(--r-md);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;padding:18%;max-width:100%;border:1px solid var(--line)}
+.tile .wm{width:100%}
+.cap{display:flex;flex-direction:column;gap:2px;font-size:13px}
+.cap b{font-weight:600}
+.cap span{color:var(--muted)}
+
+/* Zone de protection */
+.prot{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-md);padding:28px;display:flex;justify-content:center;align-items:center;overflow-x:auto}
+.prot-in{position:relative;padding:22px;border:1.5px dashed var(--orange);flex:none}
+.prot-in .wm{width:300px}
+.prot-in .bound{outline:1px solid var(--muted);outline-offset:0}
+.xdot{position:absolute;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--orange);display:flex;align-items:center;justify-content:center;font:700 10px var(--ui);color:var(--ink)}
+.anat{display:flex;flex-direction:column;gap:10px}
+.anat li{font-size:14px}
+.anat ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+
+/* Tailles */
+.sizes{display:flex;flex-direction:column;gap:22px}
+.size-row{display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:center}
+.size-row .mono{color:var(--muted)}
+.ruler{height:6px;border-left:1px solid var(--muted);border-right:1px solid var(--muted);position:relative;margin-top:6px}
+.ruler::after{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px solid var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+.tbl{overflow-x:auto}
+th{text-align:left;font:600 11px var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:0 14px 10px 0;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.num{font-variant-numeric:tabular-nums}
+
+/* Icône app */
+.app{background:#ffffff;border-radius:22%;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 0 0 1px rgba(17,24,39,.08)}
+.app.dark{background:#111827;box-shadow:none}
+.app svg{width:52%;height:auto}
+.icon-set{display:flex;align-items:flex-end;gap:22px;flex-wrap:wrap}
+.icon-set figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:8px}
+.icon-set figcaption{font-size:12px;color:var(--muted);text-align:center;line-height:1.35}
+.icon-set figcaption b{color:var(--ink);font-weight:600}
+.tab-mock{display:flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--line);border-radius:10px 10px 0 0;padding:9px 12px;font-size:12.5px;max-width:300px}
+.tab-mock span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* Interdits */
+.dont{background:var(--surface);border-radius:var(--r-md);padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.dont .stage{aspect-ratio:16/9;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;padding:12%;background:#ffffff;position:relative;overflow:hidden}
+.dont .stage .wm{width:100%}
+.dont .x{position:absolute;top:8px;right:8px;width:22px;height:22px;border-radius:50%;background:#b91c1c;color:#fff;font:700 13px/22px var(--ui);text-align:center}
+.dont p{font-size:13px;line-height:1.45}
+.fake-word{font:800 44px/1 var(--ui);letter-spacing:-.04em;color:#111827}
+
+/* Couleurs */
+.sw{border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;background:var(--bg);text-align:left;cursor:copy;font:inherit;color:inherit;padding:0;display:flex;flex-direction:column;width:100%}
+.sw .chip{height:84px;display:block;border-bottom:1px solid var(--line)}
+.sw .m{padding:12px 14px;display:flex;flex-direction:column;gap:3px}
+.sw .nm{font-weight:700;font-size:14px}
+.sw .hx{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.sw .use{font-size:12px;color:var(--muted);line-height:1.4}
+.sw.copied .hx::after{content:"  copié";color:var(--ok);font-family:var(--ui);font-weight:600}
+.dose{display:flex;height:34px;border-radius:var(--r-sm);overflow:hidden;border:1px solid var(--line)}
+.dose span{display:block}
+
+/* Contrastes */
+.pair{display:flex;align-items:center;justify-content:center;height:58px;border-radius:var(--r-sm);font:600 16px var(--ui)}
+
+/* Typo */
+.type-big{font:800 clamp(72px,12vw,140px)/.9 var(--ui);letter-spacing:-.05em}
+.glyphs{font:500 20px/1.5 var(--ui);color:var(--muted);word-break:break-all}
+
+/* Composants */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:10px 24px;border-radius:var(--r-sm);font:600 16px var(--ui);border:2px solid transparent;cursor:default}
+.btn.p{background:#ea580c;color:#fff}
+.btn.p-b{background:#c2410c;color:#fff}
+.btn.s{background:#ffedd5;color:#111827}
+.btn.c{background:#fff;color:#ea580c;border-color:#ea580c}
+.btn.lg{font:700 19px var(--ui);min-height:52px}
+.btn.p-b{background:#c2410c;color:#fff}
+.btn.c-b{background:#fff;color:#c2410c;border-color:#c2410c}
+.optline{display:flex;flex-direction:column;gap:8px;padding:12px;border-radius:var(--r-sm);background:#f9fafb}
+.optline b{font:600 12px var(--ui);color:#111827}
+.btn.d{background:#111827;color:#fff}
+.btn.off{background:#e5e7eb;color:#6b7280}
+.badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:4px 12px;font:500 12px/16px var(--ui)}
+.badge i{width:6px;height:6px;border-radius:50%;background:currentColor;display:block}
+.toggle{width:44px;height:26px;border-radius:999px;background:#e5e7eb;position:relative;flex:none}
+.toggle::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.2)}
+.toggle.on{background:#ea580c}
+.toggle.on::after{left:21px}
+.specimen{background:#ffffff;border-radius:var(--r-md);padding:20px;display:flex;flex-direction:column;gap:14px;border:1px solid var(--line);color:#111827}
+
+/* Icônes */
+.ico-row{display:flex;gap:28px;flex-wrap:wrap}
+.ico-row figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.ico-row svg{width:34px;height:34px;color:var(--ink)}
+
+/* Règles */
+.rules{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.rule{border-radius:var(--r-md);padding:18px 20px;display:flex;flex-direction:column;gap:10px;font-size:14px;line-height:1.55}
+.rule.ok{background:var(--ok-bg)}
+.rule.no{background:var(--ko-bg)}
+.rule strong{font:700 12px var(--ui);letter-spacing:.14em;text-transform:uppercase}
+.rule.ok strong{color:var(--ok)}
+.rule.no strong{color:var(--ko)}
+.rule ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+
+/* Décisions */
+.dec{border:1px solid var(--line);border-radius:var(--r-md);padding:20px;display:flex;flex-direction:column;gap:14px}
+.dec-top{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.opts{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.opt{background:var(--surface);border-radius:var(--r-sm);padding:14px 16px;font-size:13.5px;display:flex;flex-direction:column;gap:6px}
+.opt b{font-size:14px}
+
+pre.code{margin:0;background:var(--surface);border-radius:var(--r-md);padding:20px;overflow-x:auto;font:400 12.5px/1.75 var(--mono)}
+.copy{align-self:flex-start;background:var(--ink);color:var(--bg);border:0;border-radius:var(--r-sm);font:600 13px var(--ui);padding:9px 16px;cursor:pointer}
+
+footer{max-width:1120px;margin:0 auto;padding:24px 24px 64px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+@media (max-width:760px){
+  nav.toc{display:none}
+  main{gap:64px;padding-top:36px}
+  .size-row{grid-template-columns:1fr;gap:6px}
+  .sec-head .note{margin-left:0;flex-basis:100%}
+}
+</style>
+
+<!-- Tracés du fichier Illustrator d'origine, séparés en mot-symbole et icône -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="wm" viewBox="165 0 375 142">
+      <path fill="var(--l,#111827)" d="M314.3,103.8c0,6.5-6.2,9.5-11.6,9.2-5.1-.2-11-2.7-11.1-8.4l-.5-31.8c0-5.7-6.8-9.4-11.1-9.3-5.1.1-10.3,4.1-10.4,10l-.2,30c0,6.2-5.7,9.4-11.2,9.4-6.7.1-11.5-3.8-11.4-10.6l.3-32.2c.1-13.2,10.1-22.9,20.1-27.3,12.8-5.7,25.3-.6,35.7,5.8,10.1-6,22.3-11.5,35.2-5.9,10,4.3,20.5,13.5,20.7,26.7l.4,33c0,6.6-4.8,10.5-11,10.7s-11.7-3.7-11.7-10.7l-.2-29.3c0-6-6.5-9.7-11-9.7s-10.9,4.6-11,11.2l-.2,29.2Z"/>
+      <path fill="var(--l,#111827)" d="M508.6,109.7c0,14.3-10.8,25.2-21.8,29.7-21,8.5-43-5-41.3-15,.4-2,2.8-5.4,4.6-6.7,5.3-3.9,10-3,14.7.6,4.1,3.1,10.3,3.6,14.5,1.2s7.2-7.1,6.8-12.6c-10.2,4.3-20.6,3.3-30.2-2.5s-15.3-14.6-15.3-25.5v-30c0-6.1,6.7-8.8,11.7-8.5s10.8,4.2,10.7,10.7v23.4c-.1,6.7,4.4,11.6,10.5,12.2s12.5-4.1,12.6-11l.2-26.7c0-5.7,6.4-8.4,11-8.6,6.9-.3,11.7,3.9,11.7,10.8l-.4,58.5Z"/>
+      <path fill="var(--l,#111827)" d="M242.2,67.8c6.6,23.8-10.9,46-34.8,47.4s-33-9.3-38.2-24.8c-5.5-16.5.5-34.6,15.4-43.6,10.7-6.5,22.6-7.9,35.4-3.1,9.2,3.5,18.7,11.8,22.1,24.1ZM204.2,92.6c8.1.7,14.1-4.7,15.6-11.2s-1.6-13-8-16.2-18,.3-20.6,8.8c-2.5,8.2,2.9,17.8,12.9,18.6Z"/>
+      <path fill="var(--l,#111827)" d="M414.2,77.2c0-7.1-4.9-12.5-10.6-14s-13.1.8-16.6,6.9-2.5,9.8.1,14c6,10,20,2,21.8,16.2.6,4.6-1.7,10.9-7.5,12-16.5,2.9-32.2-7.7-37.2-23.4-4.4-13.7-.8-27.8,8.9-37.7,9.8-9.9,24.2-13.6,38.2-9.3,14,4.4,25.6,16.5,25.7,31.7v30c.2,6.1-5,9.7-10.9,9.6-4.9,0-11.5-3-11.5-8.8l-.3-27Z"/>
+      <path fill="var(--l,#111827)" d="M525.7,112.4c-6.4,0-11.6-3.7-11.6-10v-51.1c0-6.8,4.9-10.6,11.2-10.8s10.6,2.8,11.8,8.7v54c-1,5.8-5.1,9.1-11.5,9.1Z"/>
+      <path fill="var(--d,#ea580c)" d="M522.9,5.9c8.2-1.7,15.1,3.9,16.4,10.9s-3.5,14.1-10.4,15.8c-7.6,1.8-14.7-2.7-16.5-10.4-1.6-6.6,2.3-14.6,10.5-16.3Z"/>
+    </symbol>
+    <symbol id="ic" viewBox="0 0 123 142">
+      <path fill="var(--l,#111827)" d="M80.4,88.5c0-11.3-6.5-19.9-15.2-23.3-9.7-3.8-21.3-1.4-27.7,7.3-4.8,6.7-5.2,15.3-1.5,22,3.7,6.8,11.3,8.9,19.4,9.9,9.4,1.2,12.9,11.2,10.9,18.7-2.2,8.2-9.7,12.7-19.1,12.3-19.1-.8-34.9-12.8-42.2-28.2-8.5-18.1-6.1-38.5,5.7-54.5,15-20.3,41.3-27.4,64.8-19.2,23,8,39.1,30,38.8,55.8l-.4,31.6c-.1,9.2-9.2,14.1-16.6,14.2s-16.6-5.1-16.7-14.2l-.3-32.6Z"/>
+      <path fill="var(--d,#ea580c)" d="M101.5.4c10.6-2.1,19.2,5.4,20.8,13.7,1.9,9.7-5.2,18-13,19.9-10.1,2.5-19.2-3.5-21.5-12.4-2.3-9.1,3-19.1,13.7-21.2Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="bar">
+  <div class="bar-in">
+    <svg class="bar-logo" viewBox="0 0 375 142" role="img" aria-label="omayi" style="--l:var(--ink)"><use href="#wm"/></svg>
+    <nav class="toc" aria-label="Sommaire">
+      <a href="#logo">Logo</a>
+      <a href="#protection">Protection</a>
+      <a href="#tailles">Tailles</a>
+      <a href="#icone">Icône</a>
+      <a href="#interdits">Interdits</a>
+      <a href="#couleurs">Couleurs</a>
+      <a href="#contrastes">Contrastes</a>
+      <a href="#typo">Typo</a>
+      <a href="#ui">Interface</a>
+      <a href="#decisions">À trancher</a>
+      <a href="#tokens">Variables</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="hero">
+    <div class="lockup">
+      <svg class="wm" viewBox="0 0 375 142" role="img" aria-label="Logo omayi" style="--l:var(--ink)"><use href="#wm"/></svg>
+      <span class="tagline">Devis et factures simplement</span>
+      <div class="say" aria-label="Prononciation : o, ma, yi">
+        <span class="say-lab">Se prononce</span>
+        <span class="say-syl"><b>o</b><i>·</i><b>ma</b><i>·</i><b>yi</b></span>
+        <span class="say-note">trois syllabes, le « yi » bien marqué, jamais « o-ma-ï »</span>
+      </div>
+    </div>
+    <div class="col" style="gap:18px">
+      <span class="eyebrow">Charte graphique</span>
+      <h1>Comment utiliser la marque omayi, du favicon au PDF de devis.</h1>
+      <p class="lead">Cette charte reprend la planche « Guide de marque omayi » et les tracés du fichier Illustrator d'origine. Elle fixe les versions du logo, les tailles, les couleurs et les règles d'usage. Ce qui n'est pas encore décidé est signalé par l'étiquette <span class="tag todo">à valider</span> et regroupé dans le chapitre « À trancher ».</p>
+      <dl class="meta">
+        <dt>Version</dt><dd>1.0 · octobre 2026</dd>
+        <dt>Statut</dt><dd>Document de travail</dd>
+        <dt>Responsable</dt><dd>Cynthia Flores</dd>
+        <dt>Sources</dt><dd>omayi logo.svg, planche de marque, design system omayi</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- 01 LOGO -->
+  <section id="logo">
+    <div class="sec-head"><span class="sec-n">01</span><h2>Le logo et ses versions</h2><span class="note">Cinq versions, un seul dessin</span></div>
+    <p class="lead">Le logo est un dessin, pas un texte : les lettres rondes et épaisses portent un seul accent, le point du i en orange. On ne le recompose jamais avec une police. Le choix de la version dépend uniquement du fond sur lequel il est posé.</p>
+    <div class="grid g5">
+      <div class="col">
+        <div class="tile" style="background:#ffffff"><svg class="wm" viewBox="0 0 375 142" role="img" aria-label="Version couleur"><use href="#wm"/></svg></div>
+        <div class="cap"><b>Couleur</b><span>Fond blanc ou gris clair. Version par défaut.</span></div>
+      </div>
+      <div class="col">
+        <div class="tile" style="background:#111827;border-color:#111827"><svg class="wm" viewBox="0 0 375 142" role="img" aria-label="Version fond sombre" style="--l:#ffffff"><use href="#wm"/></svg></div>
+        <div class="cap"><b>Fond sombre</b><span>Lettres blanches, point orange.</span></div>
+      </div>
+      <div class="col">
+        <div class="tile" style="background:#ffffff"><svg class="wm" viewBox="0 0 375 142" role="img" aria-label="Version mono noir" style="--d:#111827"><use href="#wm"/></svg></div>
+        <div class="cap"><b>Mono noir</b><span>Impression une couleur, tampon, fax.</span></div>
+      </div>
+      <div class="col">
+        <div class="tile" style="background:#111827;border-color:#111827"><svg class="wm" viewBox="0 0 375 142" role="img" aria-label="Version mono blanc" style="--l:#ffffff;--d:#ffffff"><use href="#wm"/></svg></div>
+        <div class="cap"><b>Mono blanc</b><span>Gravure, sérigraphie, fond sombre une couleur.</span></div>
+      </div>
+      <div class="col">
+        <div class="tile" style="background:#ea580c;border-color:#ea580c"><svg class="wm" viewBox="0 0 375 142" role="img" aria-label="Version mono blanc sur orange" style="--l:#ffffff;--d:#ffffff"><use href="#wm"/></svg></div>
+        <div class="cap"><b>Sur orange</b><span>Toujours mono blanc : un point orange disparaîtrait.</span></div>
+      </div>
+    </div>
+
+    <div class="grid g2">
+      <div class="box">
+        <h3>Logo avec signature</h3>
+        <div style="background:#ffffff;border-radius:var(--r-sm);padding:28px 24px;display:flex;flex-direction:column;align-items:center;gap:10px">
+          <svg viewBox="0 0 375 142" style="width:min(100%,240px);display:block"><use href="#wm"/></svg>
+          <span style="font:600 10px var(--ui);letter-spacing:.32em;text-transform:uppercase;color:#111827">Devis et factures simplement</span>
+        </div>
+        <p class="note">La signature se place sous le logo, centrée, en Inter Semibold capitales, interlettrage 0,32 em, hauteur de capitale égale à environ un tiers de la hauteur du « o ». Elle s'utilise sur les supports de présentation (carte de visite, page d'accueil, PDF), jamais dans l'interface de l'application.</p>
+      </div>
+      <div class="box">
+        <h3>Choisir la bonne version</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Fond</th><th>Version</th></tr></thead>
+          <tbody>
+            <tr><td>Blanc, gris clair</td><td>Couleur</td></tr>
+            <tr><td>Noir profond</td><td>Fond sombre</td></tr>
+            <tr><td>Orange</td><td>Mono blanc</td></tr>
+            <tr><td>Photo claire</td><td>Couleur, sur la zone la plus calme de l'image</td></tr>
+            <tr><td>Photo sombre</td><td>Fond sombre</td></tr>
+            <tr><td>Une seule encre</td><td>Mono noir ou mono blanc</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 PROTECTION -->
+  <section id="protection">
+    <div class="sec-head"><span class="sec-n">02</span><h2>Construction et zone de protection</h2><span class="note">L'unité x = le point du i</span></div>
+    <div class="grid g2">
+      <div class="prot" aria-label="Schéma de la zone de protection">
+        <div class="prot-in">
+          <svg class="wm bound" viewBox="0 0 375 142" style="--l:var(--ink)"><use href="#wm"/></svg>
+          <span class="xdot" style="top:0;left:0">x</span>
+          <span class="xdot" style="top:0;right:0">x</span>
+          <span class="xdot" style="bottom:0;left:0">x</span>
+          <span class="xdot" style="bottom:0;right:0">x</span>
+        </div>
+      </div>
+      <div class="col">
+        <div class="anat">
+          <h3>Comment on mesure</h3>
+          <ol>
+            <li>L'unité <b>x</b> est le diamètre du point du i. Dans le fichier source, il mesure 27 unités sur 375 de large, soit <span class="mono">7,2 %</span> de la largeur du logo.</li>
+            <li>La zone de protection vaut <b>1 x</b> de chaque côté : haut, bas, gauche, droite. Aucun texte, bord de page, pli ou image n'y entre.</li>
+            <li>Avec la signature, la zone se mesure autour de l'ensemble logo + signature.</li>
+            <li>Pour l'icône seule, même règle : 1 x autour du « a », mesuré avec le point de l'icône.</li>
+          </ol>
+        </div>
+        <div class="tbl"><table>
+          <thead><tr><th>Largeur du logo</th><th>Marge minimale (1 x)</th></tr></thead>
+          <tbody class="num">
+            <tr><td>80 px</td><td>6 px</td></tr>
+            <tr><td>160 px</td><td>12 px</td></tr>
+            <tr><td>300 px</td><td>22 px</td></tr>
+            <tr><td>40 mm (carte de visite)</td><td>3 mm</td></tr>
+            <tr><td>60 mm (en-tête A4)</td><td>4,5 mm</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 TAILLES -->
+  <section id="tailles">
+    <div class="sec-head"><span class="sec-n">03</span><h2>Tailles et taille minimale</h2><span class="tag todo">à valider</span></div>
+    <p class="lead">En dessous de la taille minimale, le point du i et l'ouverture du « a » se bouchent : on passe alors à l'icône seule. Les seuils ci-dessous sont des propositions à tester à l'impression et sur un vrai téléphone avant de les figer.</p>
+    <div class="grid g2">
+      <div class="box sizes">
+        <div class="size-row"><span class="mono">240 px</span><div><svg viewBox="0 0 375 142" style="width:240px;max-width:100%;display:block;--l:var(--ink)"><use href="#wm"/></svg><div class="ruler" style="width:240px;max-width:100%"></div></div></div>
+        <div class="size-row"><span class="mono">160 px</span><div><svg viewBox="0 0 375 142" style="width:160px;display:block;--l:var(--ink)"><use href="#wm"/></svg><div class="ruler" style="width:160px"></div></div></div>
+        <div class="size-row"><span class="mono">120 px</span><div><svg viewBox="0 0 375 142" style="width:120px;display:block;--l:var(--ink)"><use href="#wm"/></svg><div class="ruler" style="width:120px"></div></div></div>
+        <div class="size-row"><span class="mono">80 px · minimum</span><div><svg viewBox="0 0 375 142" style="width:80px;display:block;--l:var(--ink)"><use href="#wm"/></svg><div class="ruler" style="width:80px"></div></div></div>
+      </div>
+      <div class="tbl"><table>
+        <thead><tr><th>Support</th><th>Taille conseillée</th><th>Minimum</th></tr></thead>
+        <tbody class="num">
+          <tr><td>En-tête de l'app (mobile)</td><td>96 px de large</td><td>80 px</td></tr>
+          <tr><td>Barre latérale (web)</td><td>120 px</td><td>80 px</td></tr>
+          <tr><td>Écran de connexion</td><td>160 à 200 px</td><td>120 px</td></tr>
+          <tr><td>En-tête du PDF de devis</td><td>45 mm</td><td>30 mm</td></tr>
+          <tr><td>Carte de visite</td><td>40 mm</td><td>25 mm</td></tr>
+          <tr><td>Signature d'e-mail</td><td>120 px</td><td>100 px</td></tr>
+          <tr><td>Logo avec signature</td><td>200 px / 50 mm</td><td>160 px / 40 mm</td></tr>
+          <tr><td>Plus petit que le minimum</td><td colspan="2">Utiliser l'icône seule</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <!-- 04 ICONE -->
+  <section id="icone">
+    <div class="sec-head"><span class="sec-n">04</span><h2>Icône d'application et favicon</h2><span class="note">Le « a » et son point</span></div>
+    <p class="lead">L'icône reprend le « a » du logo avec son point orange. Elle se pose dans un carré arrondi (rayon égal à 22 % du côté) avec une marge intérieure d'environ 24 %. Tailles réelles ci-dessous jusqu'à 48 px, tailles réduites au-delà.</p>
+    <div class="box">
+      <div class="icon-set">
+        <figure><div class="app" style="width:128px;height:128px"><svg viewBox="0 0 123 142"><use href="#ic"/></svg></div><figcaption><b>512 × 512</b><br>Stores, PWA (affichée à 128)</figcaption></figure>
+        <figure><div class="app" style="width:96px;height:96px"><svg viewBox="0 0 123 142"><use href="#ic"/></svg></div><figcaption><b>192 × 192</b><br>Android, PWA (affichée à 96)</figcaption></figure>
+        <figure><div class="app" style="width:90px;height:90px"><svg viewBox="0 0 123 142"><use href="#ic"/></svg></div><figcaption><b>180 × 180</b><br>iPhone, écran d'accueil (affichée à 90)</figcaption></figure>
+        <figure><div class="app dark" style="width:90px;height:90px"><svg viewBox="0 0 123 142" style="--l:#ffffff"><use href="#ic"/></svg></div><figcaption><b>Fond sombre</b><br>Variante noire</figcaption></figure>
+        <figure><div class="app" style="width:48px;height:48px"><svg viewBox="0 0 123 142"><use href="#ic"/></svg></div><figcaption><b>48</b><br>Favicon haute déf.</figcaption></figure>
+        <figure><div class="app" style="width:32px;height:32px"><svg viewBox="0 0 123 142"><use href="#ic"/></svg></div><figcaption><b>32</b><br>Favicon</figcaption></figure>
+        <figure><div class="app" style="width:16px;height:16px;border-radius:3px"><svg viewBox="0 0 123 142" style="width:70%"><use href="#ic"/></svg></div><figcaption><b>16</b><br>Onglet</figcaption></figure>
+      </div>
+    </div>
+    <div class="grid g2">
+      <div class="box">
+        <h3>Dans l'onglet du navigateur</h3>
+        <div class="tab-mock"><svg viewBox="0 0 123 142" style="width:14px;height:16px;flex:none;--l:var(--ink)"><use href="#ic"/></svg><span>omayi · Devis et factures simplement</span></div>
+        <p class="note">À 16 px, l'icône garde son point orange, il reste lisible. Fournir aussi un fichier SVG pour les navigateurs qui le prennent en charge.</p>
+      </div>
+      <div class="box">
+        <h3>Fichiers à livrer</h3>
+        <div class="tbl"><table>
+          <tbody class="mono">
+            <tr><td>favicon.svg</td><td>icône couleur vectorielle</td></tr>
+            <tr><td>favicon-32.png, favicon-16.png</td><td>repli pour vieux navigateurs</td></tr>
+            <tr><td>apple-touch-icon.png</td><td>180 × 180, fond blanc plein</td></tr>
+            <tr><td>icon-192.png, icon-512.png</td><td>manifeste PWA</td></tr>
+            <tr><td>icon-maskable-512.png</td><td>marge de sécurité 20 %</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 INTERDITS -->
+  <section id="interdits">
+    <div class="sec-head"><span class="sec-n">05</span><h2>Ce qu'on ne fait pas avec le logo</h2><span class="note">Neuf erreurs fréquentes</span></div>
+    <div class="grid g3">
+      <div class="dont"><div class="stage"><svg class="wm" viewBox="0 0 375 142" style="transform:scaleX(1.35)"><use href="#wm"/></svg><span class="x" aria-hidden="true">×</span></div><p>Déformer : étirer ou écraser le logo. Toujours redimensionner en gardant les proportions.</p></div>
+      <div class="dont"><div class="stage"><svg class="wm" viewBox="0 0 375 142" style="transform:rotate(-12deg)"><use href="#wm"/></svg><span class="x" aria-hidden="true">×</span></div><p>Faire pivoter ou incliner le logo.</p></div>
+      <div class="dont"><div class="stage"><svg class="wm" viewBox="0 0 375 142" style="--l:#1d4ed8;--d:#15803d"><use href="#wm"/></svg><span class="x" aria-hidden="true">×</span></div><p>Changer les couleurs, même avec des couleurs de la palette.</p></div>
+      <div class="dont"><div class="stage"><svg class="wm" viewBox="0 0 375 142" style="filter:drop-shadow(4px 6px 4px rgba(0,0,0,.45))"><use href="#wm"/></svg><span class="x" aria-hidden="true">×</span></div><p>Ajouter une ombre, un contour, un relief ou un dégradé.</p></div>
+      <div class="dont"><div class="stage" style="background:#ea580c"><svg class="wm" viewBox="0 0 375 142" style="--l:#111827"><use href="#wm"/></svg><span class="x" aria-hidden="true">×</span></div><p>Poser la version couleur sur l'orange : le point du i disparaît.</p></div>
+      <div class="dont"><div class="stage"><span class="fake-word">omayi</span><span class="x" aria-hidden="true">×</span></div><p>Recomposer le nom avec une police (ici Inter). Toujours utiliser les fichiers SVG.</p></div>
+      <div class="dont"><div class="stage" style="background:repeating-linear-gradient(45deg,#9ca3af 0 10px,#f3f4f6 10px 20px)"><svg class="wm" viewBox="0 0 375 142"><use href="#wm"/></svg><span class="x" aria-hidden="true">×</span></div><p>Poser le logo sur un fond chargé qui gêne sa lecture.</p></div>
+      <div class="dont"><div class="stage"><svg class="wm" viewBox="0 0 375 142" style="opacity:.35"><use href="#wm"/></svg><span class="x" aria-hidden="true">×</span></div><p>Baisser l'opacité ou s'en servir comme filigrane dans l'interface.</p></div>
+      <div class="dont"><div class="stage" style="padding:0;justify-content:flex-start;align-items:flex-start"><svg class="wm" viewBox="0 0 375 142" style="width:80%;margin:-4% 0 0 -6%"><use href="#wm"/></svg><span class="x" aria-hidden="true">×</span></div><p>Coller le logo au bord ou le recadrer : la zone de protection s'applique partout.</p></div>
+    </div>
+  </section>
+
+  <!-- 06 COULEURS -->
+  <section id="couleurs">
+    <div class="sec-head"><span class="sec-n">06</span><h2>Couleurs</h2><span class="note">Cliquer sur une pastille copie sa valeur</span></div>
+    <div class="col">
+      <span class="eyebrow">Palette principale</span>
+      <div class="grid g3">
+        <button class="sw" type="button"><span class="chip" style="background:#ea580c"></span><span class="m"><span class="nm">Orange principal</span><span class="hx">#EA580C</span><span class="use">Identité, point du i, action principale, onglet actif.</span></span></button>
+        <button class="sw" type="button"><span class="chip" style="background:#111827"></span><span class="m"><span class="nm">Noir profond</span><span class="hx">#111827</span><span class="use">Textes principaux, titres, logo, fonds sombres.</span></span></button>
+        <button class="sw" type="button"><span class="chip" style="background:#ffffff"></span><span class="m"><span class="nm">Blanc</span><span class="hx">#FFFFFF</span><span class="use">Fond principal de l'interface et des documents.</span></span></button>
+        <button class="sw" type="button"><span class="chip" style="background:#f3f4f6"></span><span class="m"><span class="nm">Gris clair</span><span class="hx">#F3F4F6</span><span class="use">Surfaces, cartes, fond de page de l'app.</span></span></button>
+        <button class="sw" type="button"><span class="chip" style="background:#e5e7eb"></span><span class="m"><span class="nm">Gris moyen</span><span class="hx">#E5E7EB</span><span class="use">Bordures, séparateurs, interrupteur inactif.</span></span></button>
+        <button class="sw" type="button"><span class="chip" style="background:#6b7280"></span><span class="m"><span class="nm">Gris texte</span><span class="hx">#6B7280</span><span class="use">Textes secondaires, icônes inactives.</span></span></button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="row"><span class="eyebrow">Couleurs d'état</span><span class="tag todo">teintes relevées à l'œil</span></div>
+      <div class="grid g3">
+        <button class="sw" type="button"><span class="chip" style="background:#ffedd5"></span><span class="m"><span class="nm">Orange clair</span><span class="hx">#FFEDD5</span><span class="use">Bouton secondaire, statut Brouillon.</span></span></button>
+        <button class="sw" type="button"><span class="chip" style="background:linear-gradient(90deg,#15803d 50%,#dcfce7 50%)"></span><span class="m"><span class="nm">Succès · fond</span><span class="hx">#15803D · #DCFCE7</span><span class="use">Accepté, payée, enregistré.</span></span></button>
+        <button class="sw" type="button"><span class="chip" style="background:linear-gradient(90deg,#b91c1c 50%,#fee2e2 50%)"></span><span class="m"><span class="nm">Erreur · fond</span><span class="hx">#B91C1C · #FEE2E2</span><span class="use">Refusé, en retard, champ invalide.</span></span></button>
+        <button class="sw" type="button"><span class="chip" style="background:linear-gradient(90deg,#1d4ed8 50%,#dbeafe 50%)"></span><span class="m"><span class="nm">Information · fond</span><span class="hx">#1D4ED8 · #DBEAFE</span><span class="use">Envoyé, message neutre.</span></span></button>
+      </div>
+    </div>
+    <div class="box">
+      <h3>Dosage sur un écran type</h3>
+      <div class="dose" aria-label="Répartition des couleurs">
+        <span style="flex:60;background:#ffffff"></span>
+        <span style="flex:22;background:#f3f4f6"></span>
+        <span style="flex:12;background:#111827"></span>
+        <span style="flex:6;background:#ea580c"></span>
+      </div>
+      <p class="note">Environ 60 % de blanc, 22 % de gris, 12 % de noir pour le texte et 6 % d'orange. L'orange marque ce qui compte : l'action principale, l'onglet actif, le point du logo. Un seul bouton orange par écran.</p>
+    </div>
+  </section>
+
+  <!-- 07 CONTRASTES -->
+  <section id="contrastes">
+    <div class="sec-head"><span class="sec-n">07</span><h2>Contrastes et accessibilité</h2><span class="note">Seuil WCAG AA : 4,5:1 texte, 3:1 grand texte et graphismes</span></div>
+    <p class="lead">Ratios recalculés avec la formule officielle du W3C. La planche d'origine annonce 4,98:1 pour le bouton orange : ce chiffre est celui du texte noir sur orange. Le texte blanc sur orange mesure 3,56:1.</p>
+    <div class="grid g3">
+      <div class="col"><div class="pair" style="background:#ffffff;color:#111827;border:1px solid var(--line)">Noir sur blanc</div><div class="row"><span class="mono">17,74:1</span><span class="tag ok">AAA</span></div></div>
+      <div class="col"><div class="pair" style="background:#ffedd5;color:#111827">Noir sur orange clair</div><div class="row"><span class="mono">15,48:1</span><span class="tag ok">AAA</span></div></div>
+      <div class="col"><div class="pair" style="background:#ea580c;color:#111827">Noir sur orange</div><div class="row"><span class="mono">4,98:1</span><span class="tag ok">AA</span></div></div>
+      <div class="col"><div class="pair" style="background:#ffffff;color:#6b7280;border:1px solid var(--line)">Gris texte sur blanc</div><div class="row"><span class="mono">4,83:1</span><span class="tag ok">AA</span></div></div>
+      <div class="col"><div class="pair" style="background:#f3f4f6;color:#6b7280">Gris texte sur gris clair</div><div class="row"><span class="mono">4,39:1</span><span class="tag ko">grand texte seul.</span></div></div>
+      <div class="col"><div class="pair" style="background:#ea580c;color:#ffffff">Blanc sur orange</div><div class="row"><span class="mono">3,56:1</span><span class="tag ko">grand texte seul.</span></div></div>
+      <div class="col"><div class="pair" style="background:#ffffff;color:#ea580c;border:1px solid var(--line)">Orange sur blanc</div><div class="row"><span class="mono">3,56:1</span><span class="tag ko">grand texte seul.</span></div></div>
+      <div class="col"><div class="pair" style="background:#111827;color:#ea580c">Orange sur noir</div><div class="row"><span class="mono">4,98:1</span><span class="tag ok">AA</span></div></div>
+      <div class="col"><div class="pair" style="background:#c2410c;color:#ffffff">Blanc sur orange foncé</div><div class="row"><span class="mono">5,18:1</span><span class="tag ok">AA</span><span class="tag todo">option</span></div></div>
+    </div>
+    <div class="box">
+      <h3>Règles couleur et accessibilité</h3>
+      <div class="tbl"><table>
+        <thead><tr><th>Élément</th><th>Seuil AA</th><th>Règle omayi</th></tr></thead>
+        <tbody>
+          <tr><td>Texte courant (moins de 18,66 px gras ou 24 px)</td><td class="num">4,5:1</td><td>Noir ou gris texte sur blanc. Sur gris clair, le texte secondaire passe en noir (gris texte = 4,39:1).</td></tr>
+          <tr><td>Grand texte (24 px, ou 18,66 px gras)</td><td class="num">3:1</td><td>Seul cas où le blanc sur #EA580C est autorisé.</td></tr>
+          <tr><td>Icônes, bordures de champ, interrupteur</td><td class="num">3:1</td><td>Orange autorisé sur blanc (3,56:1). Bordure de champ : gris texte, jamais gris moyen (1,24:1).</td></tr>
+          <tr><td>Focus clavier</td><td class="num">3:1</td><td>Contour 3 px noir sur fond clair, blanc sur fond sombre, sur tout ce qui se clique.</td></tr>
+          <tr><td>Statuts et erreurs</td><td>Pas de couleur seule</td><td>Le mot est toujours écrit (Accepté, En retard), l'erreur de champ a un message texte.</td></tr>
+          <tr><td>Éléments désactivés</td><td>Exemptés</td><td>Faible contraste volontaire, mais le libellé reste lisible.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <!-- 08 TYPO -->
+  <section id="typo">
+    <div class="sec-head"><span class="sec-n">08</span><h2>Typographie</h2><span class="note">Inter, une seule famille</span></div>
+    <div class="grid g2">
+      <div class="box">
+        <span class="type-big">Aa</span>
+        <div class="col" style="gap:4px"><b style="font-size:20px">Inter</b><span class="note">Google Fonts, licence SIL Open Font 1.1. Bold 700, Semibold 600, Medium 500, Regular 400.</span></div>
+        <p class="glyphs">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 € % · « » é è à ç</p>
+      </div>
+      <div class="box">
+        <div style="font:700 28px/34px var(--ui)">Devis n° 2026-014</div>
+        <div style="font:400 20px/28px var(--ui);color:var(--muted)">Rénovation salle de bain</div>
+        <div style="font:400 16px/24px var(--ui)">Préparation des murs : lessivage, rebouchage et ponçage avant deux couches de peinture.</div>
+        <div style="font:400 14px/20px var(--ui);color:var(--muted)">Devis du 12/06/2026 · valable 30 jours</div>
+        <div class="num" style="font:700 22px var(--ui)">1 250,00 € HT</div>
+        <p class="note">Montants en chiffres tabulaires pour que les colonnes du devis s'alignent.</p>
+      </div>
+    </div>
+    <div class="tbl"><table>
+      <thead><tr><th>Style</th><th>Réglage</th><th>Usage</th></tr></thead>
+      <tbody>
+        <tr><td>titre-principal</td><td class="num">Bold 700 · 28 / 34 px</td><td>Titre de page, numéro de document</td></tr>
+        <tr><td>sous-titre</td><td class="num">Regular 400 · 20 / 28 px · gris texte</td><td>Sous-titre, titre de section</td></tr>
+        <tr><td>texte-courant</td><td class="num">Regular 400 · 16 / 24 px</td><td>Paragraphes, champs de saisie</td></tr>
+        <tr><td>texte-petit</td><td class="num">Regular 400 · 14 / 20 px</td><td>Dates, infos secondaires dans les listes</td></tr>
+        <tr><td>bouton</td><td class="num">Semibold 600 · 16 / 24 px</td><td>Libellés de boutons</td></tr>
+        <tr><td>lien</td><td class="num">Semibold 600 · 16 / 24 px</td><td>Actions textuelles (voir contraste orange)</td></tr>
+        <tr><td>legende</td><td class="num">Medium 500 · 12 / 16 px</td><td>Badges de statut, onglets de navigation</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- 09 INTERFACE -->
+  <section id="ui">
+    <div class="sec-head"><span class="sec-n">09</span><h2>Éléments d'interface</h2><span class="note">Spécimens aux mesures du design system</span></div>
+    <div class="grid g2">
+      <div class="specimen">
+        <span class="eyebrow" style="color:#4b5563">Boutons</span>
+        <div class="optline">
+          <b>Option A · on garde #EA580C, libellé 19 px gras (grand texte, 3:1 suffit)</b>
+          <div class="row"><span class="btn p lg">+ Nouveau devis</span><span class="btn c lg">Voir les détails</span></div>
+        </div>
+        <div class="optline">
+          <b>Option B · orange foncé #C2410C, libellé 16 px (5,18:1)</b>
+          <div class="row"><span class="btn p-b">+ Nouveau devis</span><span class="btn c-b">Voir les détails</span></div>
+        </div>
+        <div class="row">
+          <span class="btn s">+ Nouvelle facture</span>
+          <span class="btn d">Envoyer</span>
+          <span class="btn off">Indisponible</span>
+        </div>
+        <p class="note" style="color:#4b5563">Hauteur 48 px minimum (cible tactile ≥ 44 px), rayon 8 px, focus clavier : contour 3 px noir. Interdit dans les deux cas : texte blanc 16 px sur #EA580C (3,56:1, non conforme). Le bouton désactivé est exempté du seuil WCAG.</p>
+      </div>
+      <div class="specimen">
+        <span class="eyebrow" style="color:#6b7280">Statuts de document</span>
+        <div class="row">
+          <span class="badge" style="background:#ffedd5;color:#111827"><i></i>Brouillon</span>
+          <span class="badge" style="background:#dbeafe;color:#1d4ed8"><i></i>Envoyé</span>
+          <span class="badge" style="background:#dcfce7;color:#15803d"><i></i>Accepté</span>
+          <span class="badge" style="background:#fee2e2;color:#b91c1c"><i></i>Refusé</span>
+        </div>
+        <div class="row">
+          <span class="badge" style="background:#f3f4f6;color:#111827"><i></i>À payer</span>
+          <span class="badge" style="background:#dbeafe;color:#1d4ed8"><i></i>Partiellement payée</span>
+          <span class="badge" style="background:#dcfce7;color:#15803d"><i></i>Payée</span>
+          <span class="badge" style="background:#fee2e2;color:#b91c1c"><i></i>En retard</span>
+        </div>
+        <p class="note" style="color:#6b7280">Les statuts reprennent ceux du backlog (devis et factures). L'attribution des couleurs est une proposition <span class="tag todo">à valider</span>.</p>
+      </div>
+      <div class="specimen">
+        <span class="eyebrow" style="color:#6b7280">Interrupteurs</span>
+        <div class="row" style="gap:28px">
+          <span class="row" style="gap:10px"><span class="toggle on" aria-hidden="true"></span>Déplacement activé</span>
+          <span class="row" style="gap:10px"><span class="toggle" aria-hidden="true"></span>Franchise TVA</span>
+        </div>
+        <p class="note" style="color:#6b7280">Orange quand activé, gris moyen quand désactivé. Le libellé dit toujours ce que l'interrupteur règle.</p>
+      </div>
+      <div class="specimen">
+        <span class="eyebrow" style="color:#6b7280">Navigation basse</span>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;border-top:1px solid #e5e7eb;padding-top:12px;font:500 11px var(--ui);color:#6b7280;text-align:center">
+          <span style="color:#111827;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:4px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Accueil</span>
+          <span style="display:flex;flex-direction:column;align-items:center;gap:4px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>Documents</span>
+          <span style="display:flex;flex-direction:column;align-items:center;gap:4px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2 .7 3 2.8 3 6"/></svg>Clients</span>
+          <span style="display:flex;flex-direction:column;align-items:center;gap:4px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v13H4zM4 7l2-3h12l2 3M9 12h6"/></svg>Chantiers</span>
+          <span style="display:flex;flex-direction:column;align-items:center;gap:4px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="5" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="19" cy="12" r="1.2"/></svg>Plus</span>
+        </div>
+        <p class="note" style="color:#6b7280">Cinq onglets, icône 22 px au trait 1,8. Actif : icône orange (3,56:1, conforme pour un graphisme) et libellé noir gras, jamais un libellé orange à 11 px. Inactif : icône et libellé en gris texte (4,83:1 sur blanc). Le contenu exact des onglets reste à fixer dans l'US01.</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <h3>Icônes métier</h3>
+      <div class="ico-row">
+        <figure><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4" stroke="#ea580c"/></svg>Devis</figure>
+        <figure><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6" stroke="#ea580c"/></svg>Facture</figure>
+        <figure><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2 .7 3 2.8 3 6" stroke="#ea580c"/></svg>Clients</figure>
+        <figure><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 7.5A6.5 6.5 0 1 0 17 16.5"/><path d="M5 10.5h8M5 13.5h8" stroke="#ea580c"/></svg>Paiements</figure>
+        <figure><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V5M16 20v-7"/><path d="M2 20h20" stroke="#ea580c"/></svg>Statistiques</figure>
+        <figure><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3l5 5L9 20H4v-5z"/><path d="M13.5 5.5l5 5" stroke="#ea580c"/></svg>Édition</figure>
+      </div>
+      <p class="note">Grille 24 × 24, trait 1,6, extrémités arrondies, sans remplissage. Le corps de l'icône prend la couleur du texte, un seul détail en orange quand l'icône représente un objet métier. Dans la navigation, l'icône est d'une seule couleur et l'orange marque l'état actif.</p>
+    </div>
+
+    <div class="rules">
+      <div class="rule ok">
+        <strong>À faire</strong>
+        <ul>
+          <li>Un seul bouton orange par écran : l'action que l'artisan est venu faire.</li>
+          <li>Cibles tactiles de 44 px minimum, l'app sert sur chantier, souvent avec des gants.</li>
+          <li>Montants en chiffres tabulaires, alignés à droite.</li>
+          <li>Statut toujours écrit en toutes lettres, jamais porté par la couleur seule.</li>
+          <li>Contour de focus visible sur tout ce qui se clique.</li>
+        </ul>
+      </div>
+      <div class="rule no">
+        <strong>À éviter</strong>
+        <ul>
+          <li>De l'orange sur du texte courant ou des petits libellés sur fond blanc.</li>
+          <li>Une deuxième famille de caractères.</li>
+          <li>Le logo dans le corps d'un écran : il vit dans l'en-tête et sur l'écran de connexion.</li>
+          <li>Des dégradés ou ombres décoratives.</li>
+          <li>Une couleur hors palette « pour une fois ».</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 DECISIONS -->
+  <section id="decisions">
+    <div class="sec-head"><span class="sec-n">10</span><h2>À trancher avant de figer la charte</h2><span class="note">Quatre décisions ouvertes</span></div>
+
+    <div class="dec">
+      <div class="dec-top"><span class="tag todo">Bloquant US01</span><h3>Texte blanc sur l'orange principal (3,56:1)</h3></div>
+      <div class="opts">
+        <div class="opt"><b>A. Garder #EA580C partout</b><span>Pour : une seule teinte, fidèle à la planche.</span><span>Contre : libellés en 18,66 px gras minimum, liens orange interdits en petit texte.</span></div>
+        <div class="opt"><b>B. Ajouter un orange foncé #C2410C</b><span>Pour : 5,18:1 avec le blanc, boutons et liens à 16 px conformes.</span><span>Contre : deux oranges à gérer, #EA580C réservé au logo et aux graphismes.</span></div>
+      </div>
+    </div>
+
+    <div class="dec">
+      <div class="dec-top"><span class="tag todo">Avant US01</span><h3>Teintes relevées à l'œil sur la planche</h3></div>
+      <p class="note">Orange clair, succès, erreur et information ont été mesurés sur une image, pas dans un fichier source. Il faut les confirmer dans le fichier Illustrator ou les adopter telles quelles en connaissance de cause.</p>
+    </div>
+
+    <div class="dec">
+      <div class="dec-top"><span class="tag todo">Avant impression</span><h3>Tailles minimales du logo</h3></div>
+      <p class="note">Les seuils du chapitre 03 sont des propositions. Imprimer une planche test (25, 30, 40 mm) et vérifier sur un téléphone à 80 px avant de les figer.</p>
+    </div>
+
+    <div class="dec">
+      <div class="dec-top"><span class="tag todo">Cohérence projet</span><h3>Nom du produit dans les documents</h3></div>
+      <p class="note">Le backlog et les décisions moteur parlent encore de « NTHIA », la marque s'appelle omayi. Décider si NTHIA reste le nom de code technique (dépôt, base) et omayi le nom public, puis l'écrire une fois dans le README.</p>
+    </div>
+  </section>
+
+  <!-- 11 TOKENS -->
+  <section id="tokens">
+    <div class="sec-head"><span class="sec-n">11</span><h2>Variables à copier</h2><span class="note">Pour client/src/styles/tokens.css</span></div>
+<pre class="code" id="tokens-code">:root {
+  /* Marque */
+  --orange: #ea580c;
+  --orange-clair: #ffedd5;
+  --noir: #111827;
+  --blanc: #ffffff;
+  --gris-clair: #f3f4f6;
+  --gris-moyen: #e5e7eb;
+  --gris-texte: #6b7280;
+
+  /* États (à confirmer) */
+  --succes: #15803d;  --succes-fond: #dcfce7;
+  --erreur: #b91c1c;  --erreur-fond: #fee2e2;
+  --info: #1d4ed8;    --info-fond: #dbeafe;
+
+  /* Typographie */
+  --police: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Espacements (à valider) */
+  --espace-1: 4px;  --espace-2: 8px;  --espace-3: 16px;
+  --espace-4: 24px; --espace-5: 32px;
+
+  /* Rayons */
+  --rayon-sm: 8px;  --rayon-md: 12px;
+  --rayon-lg: 24px; --rayon-pilule: 999px;
+}</pre>
+    <button class="copy" type="button" id="copy-tokens">Copier les variables</button>
+  </section>
+
+</main>
+
+<footer>
+  omayi · charte graphique 1.0 · octobre 2026. Logo tiré du fichier Illustrator d'origine, valeurs alignées sur le design system omayi. Police Inter, licence SIL Open Font 1.1.
+</footer>
+
+<script>
+function copyText(t, done){
+  try{
+    navigator.clipboard.writeText(t).then(done).catch(function(){});
+  }catch(e){}
+}
+document.querySelectorAll('.sw').forEach(function(el){
+  el.addEventListener('click', function(){
+    var hx = el.querySelector('.hx').textContent.split('·')[0].trim();
+    copyText(hx, function(){
+      el.classList.add('copied');
+      setTimeout(function(){ el.classList.remove('copied'); }, 1300);
+    });
+  });
+});
+document.getElementById('copy-tokens').addEventListener('click', function(){
+  var b = this;
+  copyText(document.getElementById('tokens-code').textContent, function(){
+    b.textContent = 'Variables copiées';
+    setTimeout(function(){ b.textContent = 'Copier les variables'; }, 1500);
+  });
+});
+</script>
+
+</body></html>

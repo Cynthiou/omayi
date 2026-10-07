@@ -1,5 +1,5 @@
 {
-  "name": "@js-monorepo/client",
+  "name": "@omayi/client",
   "type": "module",
   "scripts": {
     "check-types": "tsc --noEmit",
@@ -8,15 +8,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
     "@omayi/shared": "*",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router": "^7.4.1"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
+    "tailwindcss": "^4.3.3",
     "typescript": "^5.8.2",
     "vite": "^6.2.4"
   }
